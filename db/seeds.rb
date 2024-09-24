@@ -7,3 +7,14 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+require 'faker'
+
+5.times do 
+  cat = Cat.new( 
+    name: Faker::Name.first_name,
+    age: rand(1..20),
+    color: Faker::Color.color_name
+  )
+  cat.save 
+end 
